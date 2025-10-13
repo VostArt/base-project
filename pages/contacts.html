@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Козин Артём Романович</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Vost_Art</h1>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                        <li><a href="diary.html" class="nav-link">Дневник</a></li>
+                        <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="contacts-page">
+                <h1 class="page-title">Свяжитесь со мной</h1>
+
+                <div class="contacts-container">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section">
+                        <h2 class="section-title">Напишите мне</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Имя:</label>
+                                <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение:</label>
+                                <textarea id="message" name="message" required placeholder="Введите ваше сообщение..." rows="5"></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+                            <button type="submit" class="btn-primary">Отправить сообщение</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <h2 class="section-title">Мои контакты</h2>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <img src="../images/icons/email.svg" alt="Email" class="icon-svg">
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p>VostArt.kozin@yandex.ru</p>
+                                    <a href="mailto:VostArt.kozin@yandex.ru" class="contact-link">Написать письмо</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <img src="../images/icons/github.svg" alt="GitHub" class="icon-svg">
+                                </div>
+                                <div class="contact-details">
+                                    <h3>GitHub</h3>
+                                    <p>github.com/VostArt</p>
+                                    <a href="https://github.com/VostArt" target="_blank" class="contact-link">Посмотреть профиль</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <img src="../images/icons/location.svg" alt="Местоположение" class="icon-svg">
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Местоположение</h3>
+                                    <p>г. Москва, Россия</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🎓</div>
+                                <div class="contact-details">
+                                    <h3>Образование</h3>
+                                    <p>Студент ЭФБО-15-24</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🕒</div>
+                                <div class="contact-details">
+                                    <h3>График работы</h3>
+                                    <p>Пн-Пт: 19:00-20:00</p>
+                                    <p>Сб-Вс: выходной</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Дополнительная информация -->
+                        <div class="additional-info">
+                            <h3 class="section-subtitle">Дополнительная информация</h3>
+                            <div class="info-content">
+                                <p>📞 <strong>Телефон:</strong> +7 (•••) •••-••-••</p>
+                                <p>💬 <strong>Telegram:</strong> @VostArt</p>
+                                <p>🎯 <strong>Специализация:</strong> Frontend разработка</p>
+                                <p>🚀 <strong>Доступность:</strong> Готов к учебным проектам</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Козин Артём Романович. ЭФБО-15-24. Все права защищены.</p>
+                <div class="footer-contacts">
+                    <a href="mailto:VostArt.kozin@yandex.ru">
+                        <img src="../images/icons/email.svg" alt="Email" class="footer-icon">
+                        Email
+                    </a>
+                    <a href="https://github.com/VostArt">
+                        <img src="../images/icons/github.svg" alt="GitHub" class="footer-icon">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../scripts/form-validation.js"></script>
+</body>
+</html>

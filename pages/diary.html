@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник - Козин Артём Романович</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Vost_Art</h1>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Главная</a></li>
+                        <li><a href="projects.html" class="nav-link">Проекты</a></li>
+                        <li><a href="diary.html" class="nav-link active">Дневник</a></li>
+                        <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="diary-page">
+                <h1 class="page-title">Мой учебный прогресс</h1>
+
+                <!-- Diary Entries -->
+                <div class="diary-section">
+                    <h2 class="section-title">История обучения</h2>
+                    <div class="diary-entries">
+                        <div class="diary-entry completed">
+                            <div class="entry-date">15 декабря 2024</div>
+                            <div class="entry-content">
+                                <h3 class="entry-title">Верстка макета сайта</h3>
+                                <p class="entry-description">Создание адаптивного макета личного сайта с использованием HTML5 и CSS3. Изучение Grid и Flexbox.</p>
+                                <span class="entry-status">✓ Завершено</span>
+                            </div>
+                        </div>
+                        <div class="diary-entry completed">
+                            <div class="entry-date">10 декабря 2024</div>
+                            <div class="entry-content">
+                                <h3 class="entry-title">JavaScript основы</h3>
+                                <p class="entry-description">Изучение базовых концепций JavaScript: переменные, функции, DOM-манипуляции, обработка событий.</p>
+                                <span class="entry-status">✓ Завершено</span>
+                            </div>
+                        </div>
+                        <div class="diary-entry in-progress">
+                            <div class="entry-date">05 декабря 2024</div>
+                            <div class="entry-content">
+                                <h3 class="entry-title">Работа с формами</h3>
+                                <p class="entry-description">Валидация форм, обработка событий, отправка данных на сервер, работа с AJAX.</p>
+                                <span class="entry-status">⏳ В процессе</span>
+                            </div>
+                        </div>
+                        <div class="diary-entry in-progress">
+                            <div class="entry-date">01 декабря 2024</div>
+                            <div class="entry-content">
+                                <h3 class="entry-title">Адаптивный дизайн</h3>
+                                <p class="entry-description">Изучение медиа-запросов, создание адаптивных интерфейсов, mobile-first подход.</p>
+                                <span class="entry-status">⏳ В процессе</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses Progress -->
+                <div class="courses-section">
+                    <h2 class="section-title">Текущие курсы</h2>
+                    <div class="courses-container">
+                        <div class="course-item">
+                            <div class="course-header">
+                                <span class="course-name">Веб-разработка</span>
+                                <span class="course-percent">90%</span>
+                            </div>
+                            <div class="course-bar">
+                                <div class="course-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-header">
+                                <span class="course-name">JavaScript</span>
+                                <span class="course-percent">70%</span>
+                            </div>
+                            <div class="course-bar">
+                                <div class="course-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-header">
+                                <span class="course-name">React</span>
+                                <span class="course-percent">50%</span>
+                            </div>
+                            <div class="course-bar">
+                                <div class="course-progress" data-width="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Entry Form -->
+                <div class="add-entry-section">
+                    <h2 class="section-title">Добавить новую запись</h2>
+                    <form class="entry-form" id="diaryForm">
+                        <div class="form-group">
+                            <label for="entryDate">Дата:</label>
+                            <input type="date" id="entryDate" name="entryDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="entryTitle">Название темы:</label>
+                            <input type="text" id="entryTitle" name="entryTitle" required placeholder="Введите название темы">
+                        </div>
+                        <div class="form-group">
+                            <label for="entryDescription">Описание:</label>
+                            <textarea id="entryDescription" name="entryDescription" required placeholder="Опишите выполненную работу" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="entryStatus">Статус:</label>
+                            <select id="entryStatus" name="entryStatus" required>
+                                <option value="completed">Завершено</option>
+                                <option value="in-progress">В процессе</option>
+                                <option value="planned">Запланировано</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Добавить запись</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Козин Артём Романович. ЭФБО-15-24. Все права защищены.</p>
+                <div class="footer-contacts">
+                    <a href="mailto:VostArt.kozin@yandex.ru">Email</a>
+                    <a href="https://github.com/VostArt">GitHub</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Подключаем только main.js для анимации прогресс-баров -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/form-validation.js"></script>
+</body>
+</html>
