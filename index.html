@@ -2,19 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Главная - Козин Артём Романович</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preload" href="styles/styles.css" as="style">
+    <link rel="preload" href="scripts/main.js" as="script">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+    
     <div class="page-container">
         <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <h1 class="logo">Vost_Art</h1>
-                <nav class="nav">
+                <nav class="nav" aria-label="Основная навигация">
                     <ul class="nav-list">
-                        <li><a href="index.html" class="nav-link active">Главная</a></li>
+                        <li><a href="index.html" class="nav-link active" aria-current="page">Главная</a></li>
                         <li><a href="pages/projects.html" class="nav-link">Проекты</a></li>
                         <li><a href="pages/diary.html" class="nav-link">Дневник</a></li>
                         <li><a href="pages/contacts.html" class="nav-link">Контакты</a></li>
@@ -24,17 +28,34 @@
         </header>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main id="main-content" class="main-content">
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-content">
                     <div class="photo-container">
-                        <img src="images/photo.png" alt="Фото Козина Артёма" class="profile-photo">
+                        <figure class="hero__image">
+                            <picture>
+                                <!-- WebP для современных браузеров -->
+                                <source type="image/webp" 
+                                        srcset="images/photo-150.webp 150w, images/photo-200.webp 200w, images/photo-300.webp 300w"
+                                        sizes="(max-width: 768px) 200px, 300px">
+                                <!-- JPEG fallback -->
+                                <img class="hero__photo"
+                                     src="images/photo-200.jpg"
+                                     srcset="images/photo-150.jpg 150w, images/photo-200.jpg 200w, images/photo-300.jpg 300w"
+                                     sizes="(max-width: 768px) 200px, 300px"
+                                     width="300" height="300"
+                                     alt="Фото Козина Артёма - студент факультета ИТ"
+                                     loading="eager"
+                                     decoding="async"
+                                     fetchpriority="high">
+                            </picture>
+                        </figure>
                     </div>
                     <div class="hero-text">
                         <h2>Привет! Я студент</h2>
                         <p class="subtitle">Факультет ИТ, группа ЭФБО-15-24</p>
-                        <p class="description">Увлекаюсь веб-разработкой и постоянно совершенствую свои навыки в создании современных веб-приложений.</p>
+                        <p class="description">Увлекаюсь веб-разработкой и постоянно совершенствую свои навыки в создании современных веб-приложений. Изучаю HTML, CSS, JavaScript и современные фреймворки.</p>
                         <a href="assets/resume.pdf" class="btn-primary" download>Скачать резюме</a>
                     </div>
                 </div>
@@ -80,37 +101,141 @@
                             <div class="skill-progress" data-width="60"></div>
                         </div>
                     </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Responsive Design</span>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Projects Section -->
-            <section class="projects-preview">
-                <h2 class="section-title">Лучшие проекты</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/project1.jpg" alt="Личный сайт">
-                        </div>
-                        <h3 class="project-title">Личный сайт</h3>
-                        <p class="project-description">Адаптивный сайт-портфолио</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/project2.jpg" alt="Todo приложение">
-                        </div>
-                        <h3 class="project-title">Todo приложение</h3>
-                        <p class="project-description">Менеджер задач</p>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/project3.jpg" alt="Интернет-магазин">
-                        </div>
-                        <h3 class="project-title">Интернет-магазин</h3>
-                        <p class="project-description">E-commerce платформа</p>
+            <!-- About Section -->
+            <section class="about-section">
+                <h2 class="section-title">Обо мне</h2>
+                <div class="about-content">
+                    <p>Я студент факультета информационных технологий, активно изучаю веб-разработку и стремлюсь стать профессиональным фронтенд-разработчиком. В процессе обучения освоил множество технологий и создал несколько учебных проектов.</p>
+                    <p>Мои сильные стороны: внимание к деталям, способность быстро обучаться новым технологиям, ответственность и умение работать в команде. Всегда открыт для новых вызовов и возможностей для роста.</p>
+                    <div class="education-info">
+                        <h3>Образование</h3>
+                        <ul>
+                            <li>Студент факультета ИТ (ЭФБО-15-24)</li>
+                            <li>Курсы по веб-разработке</li>
+                            <li>Самостоятельное изучение современных технологий</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="projects-link">
-                    <a href="pages/projects.html" class="btn-secondary">Все проекты</a>
+            </section>
+
+            <!-- Projects Preview -->
+            <section class="projects-area">
+                <div class="projects-preview">
+                    <h2 class="section-title">Лучшие проекты</h2>
+                    <div class="projects-preview__grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <picture>
+                                    <!-- ИСПРАВЛЕННЫЕ ПУТИ - убраны ../ -->
+                                    <source media="(min-width: 1200px)" 
+                                            srcset="images/project1-800.jpg">
+                                    <source media="(min-width: 768px)" 
+                                            srcset="images/project1-400.jpg">
+                                    <img src="images/project1-400.jpg"
+                                         srcset="images/project1-400.jpg 400w, images/project1-800.jpg 800w"
+                                         sizes="(max-width: 600px) 92vw, 400px"
+                                         width="400" height="225"
+                                         alt="Личный сайт - адаптивное портфолио с современным дизайном"
+                                         loading="lazy" 
+                                         decoding="async" 
+                                         fetchpriority="low">
+                                </picture>
+                            </div>
+                            <h3 class="project-title">Личный сайт</h3>
+                            <p class="project-description">Адаптивный сайт-портфолио с современным дизайном</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <picture>
+                                    <source media="(min-width: 1200px)" 
+                                            srcset="images/project2-800.jpg">
+                                    <source media="(min-width: 768px)" 
+                                            srcset="images/project2-400.jpg">
+                                    <img src="images/project2-400.jpg"
+                                         srcset="images/project2-400.jpg 400w, images/project2-800.jpg 800w"
+                                         sizes="(max-width: 600px) 92vw, 400px"
+                                         width="400" height="225"
+                                         alt="Todo приложение - менеджер задач с LocalStorage"
+                                         loading="lazy" 
+                                         decoding="async" 
+                                         fetchpriority="low">
+                                </picture>
+                            </div>
+                            <h3 class="project-title">Todo приложение</h3>
+                            <p class="project-description">Менеджер задач с LocalStorage</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">LocalStorage</span>
+                                <span class="tech-tag">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-image">
+                                <picture>
+                                    <source media="(min-width: 1200px)" 
+                                            srcset="images/project3-800.jpg">
+                                    <source media="(min-width: 768px)" 
+                                            srcset="images/project3-400.jpg">
+                                    <img src="images/project3-400.jpg"
+                                         srcset="images/project3-400.jpg 400w, images/project3-800.jpg 800w"
+                                         sizes="(max-width: 600px) 92vw, 400px"
+                                         width="400" height="225"
+                                         alt="Интернет-магазин - e-commerce платформа с корзиной"
+                                         loading="lazy" 
+                                         decoding="async" 
+                                         fetchpriority="low">
+                                </picture>
+                            </div>
+                            <h3 class="project-title">Интернет-магазин</h3>
+                            <p class="project-description">E-commerce платформа с корзиной</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">CSS Modules</span>
+                                <span class="tech-tag">API</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-link">
+                        <a href="pages/projects.html" class="btn-secondary">Смотреть все проекты</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <section class="contact-cta">
+                <div class="cta-content">
+                    <h2 class="section-title">Готов к сотрудничеству</h2>
+                    <p class="cta-description">Ищу возможности для стажировки и участия в интересных проектах. Всегда открыт для обсуждения новых идей и сотрудничества.</p>
+                    <div class="cta-actions">
+                        <a href="pages/contacts.html" class="btn-primary">Связаться со мной</a>
+                        <a href="assets/resume.pdf" class="btn-secondary" download>Скачать резюме</a>
+                    </div>
                 </div>
             </section>
         </main>
@@ -120,8 +245,18 @@
             <div class="footer-content">
                 <p>&copy; 2024 Козин Артём Романович. ЭФБО-15-24. Все права защищены.</p>
                 <div class="footer-contacts">
-                    <a href="mailto:VostArt.kozin@yandex.ru">Email</a>
-                    <a href="https://github.com/VostArt">GitHub</a>
+                    <a href="mailto:VostArt.kozin@yandex.ru">
+                        <img src="images/icons/email.svg" alt="Email" class="footer-icon">
+                        Email
+                    </a>
+                    <a href="https://github.com/VostArt">
+                        <img src="images/icons/github.svg" alt="GitHub" class="footer-icon">
+                        GitHub
+                    </a>
+                    <a href="https://t.me/VostArt">
+                        <img src="images/icons/telegram.svg" alt="Telegram" class="footer-icon">
+                        Telegram
+                    </a>
                 </div>
             </div>
         </footer>

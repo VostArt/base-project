@@ -2,21 +2,28 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Дневник - Козин Артём Романович</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preload" href="../styles/styles.css" as="style">
+    <link rel="preload" href="../scripts/main.js" as="script">
+    <link rel="preload" href="../scripts/form-validation.js" as="script">
 </head>
 <body>
+    <!-- Skip-link для клавиатурной навигации -->
+    <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+    
     <div class="page-container">
         <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <h1 class="logo">Vost_Art</h1>
-                <nav class="nav">
+                <nav class="nav" aria-label="Основная навигация">
                     <ul class="nav-list">
                         <li><a href="../index.html" class="nav-link">Главная</a></li>
                         <li><a href="projects.html" class="nav-link">Проекты</a></li>
-                        <li><a href="diary.html" class="nav-link active">Дневник</a></li>
+                        <li><a href="diary.html" class="nav-link active" aria-current="page">Дневник</a></li>
                         <li><a href="contacts.html" class="nav-link">Контакты</a></li>
                     </ul>
                 </nav>
@@ -24,7 +31,7 @@
         </header>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main id="main-content" class="main-content">
             <section class="diary-page">
                 <h1 class="page-title">Мой учебный прогресс</h1>
 
@@ -35,32 +42,32 @@
                         <div class="diary-entry completed">
                             <div class="entry-date">15 декабря 2024</div>
                             <div class="entry-content">
-                                <h3 class="entry-title">Верстка макета сайта</h3>
-                                <p class="entry-description">Создание адаптивного макета личного сайта с использованием HTML5 и CSS3. Изучение Grid и Flexbox.</p>
+                                <h3 class="entry-title">Адаптивная вёрстка и современные изображения</h3>
+                                <p class="entry-description">Изучение и применение адаптивных техник для изображений: picture element, srcset, sizes, WebP форматы. Создание отзывчивых интерфейсов с учетом разных устройств и плотности пикселей.</p>
                                 <span class="entry-status">✓ Завершено</span>
                             </div>
                         </div>
                         <div class="diary-entry completed">
                             <div class="entry-date">10 декабря 2024</div>
                             <div class="entry-content">
-                                <h3 class="entry-title">JavaScript основы</h3>
-                                <p class="entry-description">Изучение базовых концепций JavaScript: переменные, функции, DOM-манипуляции, обработка событий.</p>
+                                <h3 class="entry-title">Доступность и семантическая разметка</h3>
+                                <p class="entry-description">Изучение WCAG guidelines, ARIA атрибутов, skip-links и фокус-менеджмента. Создание доступных форм и навигации для пользователей с ограниченными возможностями.</p>
                                 <span class="entry-status">✓ Завершено</span>
                             </div>
                         </div>
                         <div class="diary-entry in-progress">
                             <div class="entry-date">05 декабря 2024</div>
                             <div class="entry-content">
-                                <h3 class="entry-title">Работа с формами</h3>
-                                <p class="entry-description">Валидация форм, обработка событий, отправка данных на сервер, работа с AJAX.</p>
+                                <h3 class="entry-title">Производительность веб-приложений</h3>
+                                <p class="entry-description">Оптимизация загрузки ресурсов, lazy loading, code splitting. Работа с Lighthouse, анализ метрик Core Web Vitals и улучшение пользовательского опыта.</p>
                                 <span class="entry-status">⏳ В процессе</span>
                             </div>
                         </div>
                         <div class="diary-entry in-progress">
                             <div class="entry-date">01 декабря 2024</div>
                             <div class="entry-content">
-                                <h3 class="entry-title">Адаптивный дизайн</h3>
-                                <p class="entry-description">Изучение медиа-запросов, создание адаптивных интерфейсов, mobile-first подход.</p>
+                                <h3 class="entry-title">Продвинутый CSS: Grid, Flexbox и контейнерные запросы</h3>
+                                <p class="entry-description">Глубокое изучение современных CSS техник: сложные Grid layouts, контейнерные запросы, кастомные свойства. Создание адаптивных компонентов без медиа-запросов.</p>
                                 <span class="entry-status">⏳ В процессе</span>
                             </div>
                         </div>
@@ -73,7 +80,7 @@
                     <div class="courses-container">
                         <div class="course-item">
                             <div class="course-header">
-                                <span class="course-name">Веб-разработка</span>
+                                <span class="course-name">Адаптивный веб-дизайн</span>
                                 <span class="course-percent">90%</span>
                             </div>
                             <div class="course-bar">
@@ -82,7 +89,7 @@
                         </div>
                         <div class="course-item">
                             <div class="course-header">
-                                <span class="course-name">JavaScript</span>
+                                <span class="course-name">Современный JavaScript</span>
                                 <span class="course-percent">70%</span>
                             </div>
                             <div class="course-bar">
@@ -91,11 +98,20 @@
                         </div>
                         <div class="course-item">
                             <div class="course-header">
-                                <span class="course-name">React</span>
+                                <span class="course-name">React и экосистема</span>
                                 <span class="course-percent">50%</span>
                             </div>
                             <div class="course-bar">
                                 <div class="course-progress" data-width="50"></div>
+                            </div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-header">
+                                <span class="course-name">Оптимизация производительности</span>
+                                <span class="course-percent">40%</span>
+                            </div>
+                            <div class="course-bar">
+                                <div class="course-progress" data-width="40"></div>
                             </div>
                         </div>
                     </div>
@@ -104,27 +120,51 @@
                 <!-- Add Entry Form -->
                 <div class="add-entry-section">
                     <h2 class="section-title">Добавить новую запись</h2>
-                    <form class="entry-form" id="diaryForm">
+                    <form class="entry-form" id="diaryForm" aria-labelledby="diary-form-title">
+                        <!-- Группа полей для даты -->
                         <div class="form-group">
                             <label for="entryDate">Дата:</label>
-                            <input type="date" id="entryDate" name="entryDate" required>
+                            <input type="date" id="entryDate" name="entryDate" required
+                                   aria-required="true"
+                                   aria-describedby="date-hint">
+                            <small id="date-hint" class="visually-hidden">Выберите дату записи</small>
                         </div>
+                        
+                        <!-- Группа полей для названия темы -->
                         <div class="form-group">
                             <label for="entryTitle">Название темы:</label>
-                            <input type="text" id="entryTitle" name="entryTitle" required placeholder="Введите название темы">
+                            <input type="text" id="entryTitle" name="entryTitle" required
+                                   placeholder="Введите название темы"
+                                   aria-required="true"
+                                   aria-describedby="title-hint">
+                            <small id="title-hint" class="visually-hidden">Введите название учебной темы</small>
                         </div>
+                        
+                        <!-- Группа полей для описания -->
                         <div class="form-group">
                             <label for="entryDescription">Описание:</label>
-                            <textarea id="entryDescription" name="entryDescription" required placeholder="Опишите выполненную работу" rows="4"></textarea>
+                            <textarea id="entryDescription" name="entryDescription" required
+                                      placeholder="Опишите выполненную работу"
+                                      rows="4"
+                                      aria-required="true"
+                                      aria-describedby="description-hint"></textarea>
+                            <small id="description-hint" class="visually-hidden">Опишите что вы изучили или выполнили</small>
                         </div>
+                        
+                        <!-- Группа полей для статуса -->
                         <div class="form-group">
                             <label for="entryStatus">Статус:</label>
-                            <select id="entryStatus" name="entryStatus" required>
+                            <select id="entryStatus" name="entryStatus" required
+                                    aria-required="true"
+                                    aria-describedby="status-hint">
                                 <option value="completed">Завершено</option>
                                 <option value="in-progress">В процессе</option>
                                 <option value="planned">Запланировано</option>
                             </select>
+                            <small id="status-hint" class="visually-hidden">Выберите статус выполнения</small>
                         </div>
+                        
+                        <!-- Кнопка отправки формы -->
                         <button type="submit" class="btn-primary">Добавить запись</button>
                     </form>
                 </div>
@@ -136,8 +176,14 @@
             <div class="footer-content">
                 <p>&copy; 2024 Козин Артём Романович. ЭФБО-15-24. Все права защищены.</p>
                 <div class="footer-contacts">
-                    <a href="mailto:VostArt.kozin@yandex.ru">Email</a>
-                    <a href="https://github.com/VostArt">GitHub</a>
+                    <a href="mailto:VostArt.kozin@yandex.ru">
+                        <img src="../images/icons/email.svg" alt="Email" class="footer-icon">
+                        Email
+                    </a>
+                    <a href="https://github.com/VostArt">
+                        <img src="../images/icons/github.svg" alt="GitHub" class="footer-icon">
+                        GitHub
+                    </a>
                 </div>
             </div>
         </footer>

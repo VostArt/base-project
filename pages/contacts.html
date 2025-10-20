@@ -2,17 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Контакты - Козин Артём Романович</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <!-- Предзагрузка критичных ресурсов -->
+    <link rel="preload" href="../styles/styles.css" as="style">
+    <link rel="preload" href="../scripts/form-validation.js" as="script">
 </head>
 <body>
+    <!-- Skip-link для клавиатурной навигации -->
+    <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+    
     <div class="page-container">
         <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <h1 class="logo">Vost_Art</h1>
-                <nav class="nav">
+                <nav class="nav" aria-label="Основная навигация">
                     <ul class="nav-list">
                         <li><a href="../index.html" class="nav-link">Главная</a></li>
                         <li><a href="projects.html" class="nav-link">Проекты</a></li>
@@ -24,7 +30,7 @@
         </header>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main id="main-content" class="main-content">
             <section class="contacts-page">
                 <h1 class="page-title">Свяжитесь со мной</h1>
 
@@ -32,22 +38,42 @@
                     <!-- Contact Form -->
                     <div class="contact-form-section">
                         <h2 class="section-title">Напишите мне</h2>
-                        <form class="contact-form" id="contactForm">
+                        <form class="contact-form" id="contactForm" aria-labelledby="contact-form-title">
+                            <!-- Группа полей для имени -->
                             <div class="form-group">
                                 <label for="name">Имя:</label>
-                                <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-                                <span class="error-message" id="nameError"></span>
+                                <input type="text" id="name" name="name" required
+                                       placeholder="Введите ваше имя"
+                                       aria-required="true"
+                                       aria-describedby="name-hint">
+                                <small id="name-hint" class="visually-hidden">Введите ваше полное имя</small>
+                                <span class="error-message" id="nameError" role="alert" aria-live="polite"></span>
                             </div>
+                            
+                            <!-- Группа полей для email -->
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required placeholder="example@mail.ru">
-                                <span class="error-message" id="emailError"></span>
+                                <input type="email" id="email" name="email" required
+                                       placeholder="example@mail.ru"
+                                       aria-required="true"
+                                       aria-describedby="email-hint">
+                                <small id="email-hint" class="visually-hidden">Введите действующий email адрес для обратной связи</small>
+                                <span class="error-message" id="emailError" role="alert" aria-live="polite"></span>
                             </div>
+                            
+                            <!-- Группа полей для сообщения -->
                             <div class="form-group">
                                 <label for="message">Сообщение:</label>
-                                <textarea id="message" name="message" required placeholder="Введите ваше сообщение..." rows="5"></textarea>
-                                <span class="error-message" id="messageError"></span>
+                                <textarea id="message" name="message" required
+                                          placeholder="Введите ваше сообщение..."
+                                          rows="5"
+                                          aria-required="true"
+                                          aria-describedby="message-hint"></textarea>
+                                <small id="message-hint" class="visually-hidden">Опишите цель вашего обращения, минимальная длина 10 символов</small>
+                                <span class="error-message" id="messageError" role="alert" aria-live="polite"></span>
                             </div>
+                            
+                            <!-- Кнопка отправки формы -->
                             <button type="submit" class="btn-primary">Отправить сообщение</button>
                         </form>
                     </div>
@@ -56,9 +82,10 @@
                     <div class="contact-info-section">
                         <h2 class="section-title">Мои контакты</h2>
                         <div class="contact-info">
+                            <!-- Контакт: Email -->
                             <div class="contact-item">
                                 <div class="contact-icon">
-                                    <img src="../images/icons/email.svg" alt="Email" class="icon-svg">
+                                    <img src="../images/icons/email.svg" alt="" class="icon-svg">
                                 </div>
                                 <div class="contact-details">
                                     <h3>Email</h3>
@@ -66,25 +93,31 @@
                                     <a href="mailto:VostArt.kozin@yandex.ru" class="contact-link">Написать письмо</a>
                                 </div>
                             </div>
+                            
+                            <!-- Контакт: GitHub -->
                             <div class="contact-item">
                                 <div class="contact-icon">
-                                    <img src="../images/icons/github.svg" alt="GitHub" class="icon-svg">
+                                    <img src="../images/icons/github.svg" alt="" class="icon-svg">
                                 </div>
                                 <div class="contact-details">
                                     <h3>GitHub</h3>
                                     <p>github.com/VostArt</p>
-                                    <a href="https://github.com/VostArt" target="_blank" class="contact-link">Посмотреть профиль</a>
+                                    <a href="https://github.com/VostArt" target="_blank" rel="noopener noreferrer" class="contact-link">Посмотреть профиль</a>
                                 </div>
                             </div>
+                            
+                            <!-- Контакт: Местоположение -->
                             <div class="contact-item">
                                 <div class="contact-icon">
-                                    <img src="../images/icons/location.svg" alt="Местоположение" class="icon-svg">
+                                    <img src="../images/icons/location.svg" alt="" class="icon-svg">
                                 </div>
                                 <div class="contact-details">
                                     <h3>Местоположение</h3>
                                     <p>г. Москва, Россия</p>
                                 </div>
                             </div>
+                            
+                            <!-- Контакт: Образование -->
                             <div class="contact-item">
                                 <div class="contact-icon">🎓</div>
                                 <div class="contact-details">
@@ -92,6 +125,8 @@
                                     <p>Студент ЭФБО-15-24</p>
                                 </div>
                             </div>
+                            
+                            <!-- Контакт: График работы -->
                             <div class="contact-item">
                                 <div class="contact-icon">🕒</div>
                                 <div class="contact-details">
