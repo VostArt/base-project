@@ -1624,3 +1624,87 @@ img[loading="lazy"].loaded {
     outline-offset: 4px;
     border-radius: 4px;
 }
+/* ===== УЛУЧШЕНИЯ ДОСТУПНОСТИ ПОСЛЕ LIGHTHOUSE АУДИТА ===== */
+
+/* Улучшение контрастности для фона элементов */
+.skill-bar,
+.course-bar {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Улучшение видимости фокуса */
+.nav-link:focus,
+.btn-primary:focus,
+.btn-secondary:focus,
+.form-input:focus,
+.form-textarea:focus,
+.contact-link:focus,
+.filter-btn:focus,
+.project-link:focus {
+    outline: 3px solid #ff4444 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.3) !important;
+}
+
+/* Улучшение размера интерактивных элементов для сенсорных устройств */
+@media (max-width: 768px) {
+    .form-input,
+    .form-textarea {
+        font-size: 16px;
+        min-height: 44px;
+    }
+}
+
+/* Улучшение читаемости текста */
+.about-content p,
+.cta-description,
+.project-description,
+.entry-description {
+    line-height: 1.7;
+    max-width: 65ch;
+}
+
+/* Улучшение доступности для высококонтрастного режима */
+@media (prefers-contrast: high) {
+    .skill-progress,
+    .course-progress {
+        background: #ff0000 !important;
+        border: 1px solid #ffffff;
+    }
+}
+
+/* Улучшение для режима уменьшенного движения */
+@media (prefers-reduced-motion: reduce) {
+    .hero__photo,
+    .project-image img {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* Улучшение видимости обязательных полей */
+.required-asterisk {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+.form-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Улучшение доступности ошибок */
+.error-message {
+    color: #ff4444;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.form-input[aria-invalid="true"],
+.form-textarea[aria-invalid="true"] {
+    border-color: #ff4444 !important;
+    background-color: rgba(255, 68, 68, 0.05);
+}
