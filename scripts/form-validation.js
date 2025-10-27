@@ -303,3 +303,37 @@ if (typeof module !== 'undefined' && module.exports) {
         showNotification
     };
 }
+/**
+ * Дополнительная инициализация для доступности форм
+ */
+function setupAccessibility() {
+    // Улучшение навигации с клавиатуры
+    document.addEventListener('keydown', function(e) {
+        // Escape закрывает уведомления
+        if (e.key === 'Escape') {
+            const notification = document.querySelector('.notification');
+            if (notification) {
+                notification.remove();
+            }
+        }
+    });
+
+    // Улучшение фокуса для полей формы
+    const formInputs = document.querySelectorAll('.form-input, .form-textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+        });
+    });
+
+    console.log('Дополнительные функции доступности инициализированы');
+}
+
+// Инициализируем при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    setupAccessibility();
+});

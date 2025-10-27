@@ -1466,3 +1466,161 @@ img[loading="lazy"].loaded {
         height: 250px;
     }
 }
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ДОСТУПНОСТИ КОНТАКТОВ ===== */
+
+/* Визуально скрытый контент */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Стили для fieldset и legend */
+.form-fieldset {
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 0, 0, 0.05);
+}
+
+.fieldset-legend {
+    font-weight: 600;
+    color: var(--color-accent);
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
+    float: left;
+    margin-bottom: 1rem;
+}
+
+/* Подсказки для полей формы */
+.form-hint {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Действия формы */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* Обязательные поля */
+.required-asterisk {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/* Состояния фокуса для доступности */
+.form-input:focus,
+.form-textarea:focus {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Улучшенные стили для контактной информации */
+.contact-info-section .section-title,
+.contact-form-section .section-title {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.contact-info-section .section-title::after,
+.contact-form-section .section-title::after {
+    left: 0;
+    transform: none;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .contacts-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-fieldset {
+        padding: 1rem;
+    }
+}
+
+/* Улучшение для сенсорных устройств */
+@media (pointer: coarse) {
+    .form-input,
+    .form-textarea {
+        min-height: 44px;
+        padding: 1rem;
+    }
+    
+    .form-actions button {
+        min-height: 44px;
+        padding: 1rem 2rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .form-input,
+    .form-textarea {
+        border-width: 2px;
+    }
+    
+    .form-fieldset {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .form-input,
+    .form-textarea {
+        transition: none;
+    }
+}
+
+/* Улучшения для страницы контактов */
+.page-subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-item {
+    transition: transform 0.2s ease;
+}
+
+.contact-item:focus-within {
+    transform: translateX(5px);
+    background: rgba(255, 0, 0, 0.15);
+}
+
+/* Логотип как ссылка */
+.logo-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.logo-link:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
